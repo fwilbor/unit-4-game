@@ -55,6 +55,11 @@
 
             <div class="randomNumber">
                 Random Number
+                <button onclick="document.getElementById('randomNumber').innerHTML = getRndInteger(19,120)">Click
+                    Me</button>
+
+                <p id="random"></p>
+
             </div>
 
             <div class="col">
@@ -96,6 +101,10 @@
     <script type="text/javascript">
 
         console.log("Hello World!");
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
     </script>
 </body>
