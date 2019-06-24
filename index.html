@@ -8,6 +8,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -55,7 +56,7 @@
 
             <div class="randomNumber">
                 Random Number
-                <button onclick="document.getElementById('randomNumber').innerHTML = getRndInteger(19,120)">Click
+                <button onclick="document.getElementById('button').innerHTML = getRandomNumber(19, 120)">Click
                     Me</button>
 
                 <p id="random"></p>
@@ -102,9 +103,22 @@
 
         console.log("Hello World!");
 
-        function getRndInteger(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        let getRandomNumber = function (start, range) {
+
+            let getRandom = Math.floor((Math.random() * range) + start);
+
+            while (getRandom > range) {
+
+                getRandom = Math.floor((Math.random() * range) + start);
+
+            }
+            return getRandom;
+
         }
+
+        console.log(getRandomNumber(19, 120));
+
+        $(".randomNumber").prepend(getRandomNumber(19, 120));
 
     </script>
 </body>
