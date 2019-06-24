@@ -97,39 +97,72 @@
     </div>
 
 
+<script src='./assets/javascript/game.js'></script>
 
     <script type="text/javascript">
 
-        console.log("Hello World!");
-
-        let getRandomNumber = function (start, range) {
-
-            let getRandom = Math.floor((Math.random() * range) + start);
-
-            while (getRandom > range) {
-
-                getRandom = Math.floor((Math.random() * range) + start);
-
+        var crystal = {
+            blue: {
+                name: "Blue",
+                value: 0
+            },
+            green: {
+                name: "Green",
+                value: 0
+            },
+            red: {
+                name: "Red",
+                value: 0
+            },
+            yellow: {
+                name: "Yellow",
+                value: 0
             }
-            return getRandom;
-
         }
 
-        console.log(getRandomNumber(19, 120));
 
-        $(".randomNumber").prepend(getRandomNumber(19, 120));
+
+        //function that generates random number for anything
+        let getRandom = function (min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+         };
+
+        //function that creates the random target value 
+        //Get random number is the "target"
+
+        
+
+        var startGame = function () {
+            currentScore = 0;
+            targetScore = getRandom(19, 120);
+            crystal.blue.value = getRandom(1, 12);
+            crystal.red.value = getRandom(1, 12);
+            crystal.yellow.value = getRandom(1, 12);
+            crystal.green.value = getRandom(1, 12);
+            $('#score').text(currentScore);
+            $('#random').text(targetScore);
+            console.log('blue = ' + crystal.blue.value);
+            console.log(targetScore)
+        }
+
+startGame();
+        // $(".randomNumber").prepend(getRandomNumber(19, 120));
 
         var crystalNumber;
-        var loss;
+        var loss = [];
         var win;
+        var currentScore = 0;
+        var targetScore = 0;
 
-        for (var i = 0; i < 4; i++) {
-
-
-
-
+        ///match clicks to crystals
+        var addValues = function(clickedCrystal){
+            currentScore += clickedCrystal.value;
+            $('score').text(currentScore);
+            //run the function that checks for wins and losses
         }
 
+
+        
     </script>
 </body>
 
