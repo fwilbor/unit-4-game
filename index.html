@@ -97,7 +97,7 @@
     </div>
 
 
-<script src='./assets/javascript/game.js'></script>
+    <script src='./assets/javascript/game.js'></script>
 
     <script type="text/javascript">
 
@@ -125,27 +125,31 @@
         //function that generates random number for anything
         let getRandom = function (min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
-         };
+        };
 
         //function that creates the random target value 
         //Get random number is the "target"
 
-        
+
 
         var startGame = function () {
             currentScore = 0;
             targetScore = getRandom(19, 120);
-            crystal.blue.value = getRandom(1, 12);
             crystal.red.value = getRandom(1, 12);
+            crystal.blue.value = getRandom(1, 12);
             crystal.yellow.value = getRandom(1, 12);
             crystal.green.value = getRandom(1, 12);
             $('#score').text(currentScore);
             $('#random').text(targetScore);
+            console.log('red = ' + crystal.red.value);
             console.log('blue = ' + crystal.blue.value);
+            console.log('yellow = ' + crystal.yellow.value);
+            console.log('green = ' + crystal.green.value);
+
             console.log(targetScore)
         }
 
-startGame();
+        startGame();
         // $(".randomNumber").prepend(getRandomNumber(19, 120));
 
         var crystalNumber;
@@ -155,14 +159,14 @@ startGame();
         var targetScore = 0;
 
         ///match clicks to crystals
-        var addValues = function(clickedCrystal){
+        var addValues = function (clickedCrystal) {
             currentScore += clickedCrystal.value;
             $('score').text(currentScore);
             //run the function that checks for wins and losses
         }
 
 
-        
+
     </script>
 </body>
 
