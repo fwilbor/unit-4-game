@@ -51,12 +51,36 @@ startGame();
 // $(".randomNumber").prepend(getRandomNumber(19, 120));
 
 
-$(".crystal").on('click', function () {
-  console.log($(this));
+
+
+$("#red").on("click", function () {
+  // console.log($(this))
+  console.log(crystal.red.value);
+
+});
+
+$("#blue").on("click", function () {
+  // console.log($(this))
+  console.log(crystal.blue.value);
 
 
 
-})
+});
+
+$("#yellow").on("click", function () {
+  // console.log($(this))
+  console.log(crystal.yellow.value);
+
+
+});
+
+
+$("#green").on("click", function () {
+  // console.log($(this))
+  console.log(crystal.green.value);
+
+
+});
 
 
 
