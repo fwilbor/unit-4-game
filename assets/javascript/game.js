@@ -37,6 +37,8 @@ var startGame = function () {
   $("#score").text(currentScore);
   $("#random").text(targetScore);
   $()
+
+  //for developer check 
   console.log("red = " + crystal.red.value);
   console.log("blue = " + crystal.blue.value);
   console.log("yellow = " + crystal.yellow.value);
