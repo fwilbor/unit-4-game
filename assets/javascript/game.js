@@ -54,15 +54,72 @@ startGame();
 
 
 $("#red").on("click", function () {
-  // console.log($(this))
-  console.log(crystal.red.value);
+  // console.log($(this))x
+  var num = parseInt(crystal.red.value);
 
+  currentScore = currentScore + num;
+  $('#score').text(currentScore)
+  winCheck();
 });
+
+
+function winCheck() {
+  if (currentScore === targetScore) {
+    wins = wins + 1;
+    alert("You Win");
+    $("#wins").text(`wins: ${wins}`);
+    startGame();
+  }
+
+  else if (currentScore > targetScore) {
+    losses = losses + 1
+    alert("You Lose");
+    $("#losses").text(`losses: ${losses}`)
+    startGame();
+  }
+}
+
+
+function Reset() {
+  startGame()
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   console.log(crystal.red.value);
+//   $("#score").prepend(crystal.red.value)
+//   console.log(num);
+
+// });
 
 $("#blue").on("click", function () {
   // console.log($(this))
   console.log(crystal.blue.value);
-
+  var num = parseInt(crystal.blue.value);
+  currentScore = currentScore + num;
+  $('#score').text(currentScore)
+  winCheck();
 
 
 });
@@ -70,36 +127,40 @@ $("#blue").on("click", function () {
 $("#yellow").on("click", function () {
   // console.log($(this))
   console.log(crystal.yellow.value);
-
-
+  var num = parseInt(crystal.yellow.value);
+  currentScore = currentScore + num;
+  $('#score').text(currentScore)
+  winCheck();
 });
 
 
 $("#green").on("click", function () {
-  // console.log($(this))
+
   console.log(crystal.green.value);
-
-
+  var num = parseInt(crystal.green.value);
+  currentScore = currentScore + num;
+  $('#score').text(currentScore)
+  winCheck();
 });
 
 
 
-var crystalNumber;
-var loss = [];
-var win;
-var currentScore = 0;
-var targetScore = 0;
+// var crystalNumber;
+var losses = 0;
+var wins = 0;
+// var currentScore = 0;
+// var targetScore = 0;
 
-///match clicks to crystals
-var addValues = function (clickedCrystal) {
-  currentScore += clickedCrystal.value;
-  $("score").text(currentScore);
-  //run the function that checks for wins and losses
-}
+// ///match clicks to crystals
+// var addValues = function (clickedCrystal) {
+//   currentScore += clickedCrystal.value;
+//   $("score").text(currentScore);
+//   //run the function that checks for wins and losses
+// }
 
 
-var winCount = 0;
-var lossCount = 0;
+// var winCount = 0;
+// var lossCount = 0;
 
 // var checkWin = function(){
 //   if(currentScore > targetscore){
