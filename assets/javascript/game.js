@@ -1,5 +1,3 @@
-alert('our JS is linked!');
-
 var crystal = {
   blue: {
     name: "Blue",
